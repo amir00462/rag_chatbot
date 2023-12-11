@@ -1,0 +1,294 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100;300;400;500;700;800;900&display=swap");
+
+/* primary color -> #1B2836
+secondary color -> #467FF7 
+hint color -> #93939A
+old background -> #40414F
+ai chat background -> 
+
+use vercel.com to deploy frontEnd code
+use render.com to deploy backend code
+
+make this bigger when new line approved
+*/
+
+#bannerContainer {
+  display: none;
+  /* Initially hide the container */
+  position: fixed;
+  top: 38%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 1000;
+  /* Set a high z-index to ensure it appears on top */
+}
+
+#bannerContainer img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: 140px;
+}
+
+header {
+  background-color: #1B2836;
+  opacity: 0.85;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+}
+
+.header-content {
+  padding-top: 16px;
+  padding-right: 16px;
+  padding-left: 16px;
+  color: #fff;
+  font-size: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#clearButton {
+  background-color: white;
+}
+
+#imgInsideClearButton {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+@font-face {
+  font-family: 'IranSans';
+
+  src: url('assets/font/base.ttf') format('ttf'),
+    url('assets/font/base.woff') format('woff'),
+    url('assets/font/base.woff2') format('woff2');
+
+  /* Specify font-weight and font-style if needed */
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "IranSans", sans-serif;
+}
+
+body {
+  direction: rtl;
+  text-align: right;
+  background: #1B2836;
+  overflow: hidden;
+}
+
+#app {
+  width: 100vw;
+  height: 98vh;
+  background: #1B2836;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#chat_container {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  /* margin-top: 100px; */
+  padding-top: 100px;
+  padding-bottom: 20px;
+  scroll-behavior: smooth;
+}
+
+/* hides scrollbar */
+#chat_container::-webkit-scrollbar {
+  display: none;
+}
+
+.wrapper {
+  /* display: flex; */
+  width: 100%;
+  padding: 15px;
+}
+
+.ai {
+  background: #28394c;
+}
+
+.chat {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.profile {
+  width: 38px;
+  height: 38px;
+  border-radius: 6px;
+
+  background: #5436DA;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* 
+.copy_div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 26px;
+  height: 26px;
+} */
+
+.ai .profile {
+  background: #10a37f;
+}
+
+.profile img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+
+.message {
+  flex: 1;
+
+  color: #dcdcdc;
+  font-size: 20px;
+
+  max-width: 100%;
+  overflow-x: scroll;
+
+  /*
+   * white space refers to any spaces, tabs, or newline characters that are used to format the CSS code
+   * specifies how white space within an element should be handled. It is similar to the "pre" value, which tells the browser to treat all white space as significant and to preserve it exactly as it appears in the source code.
+   * The pre-wrap value allows the browser to wrap long lines of text onto multiple lines if necessary.
+   * The default value for the white-space property in CSS is "normal". This tells the browser to collapse multiple white space characters into a single space, and to wrap text onto multiple lines as needed to fit within its container.
+  */
+  white-space: pre-wrap;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* hides scrollbar */
+.message::-webkit-scrollbar {
+  display: none;
+}
+
+.additional-text {
+  color: #dcdcdc;
+  font-size: 16px;
+  margin-top: 16px;
+  /* Adjust this value to control the space between textarea and text */
+}
+
+form {
+  width: 96%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 12px;
+  background: #1B2836;
+
+  border-radius: 24px;
+  border: solid 2px #93939A;
+
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+
+  align-items: center;
+}
+
+textarea::placeholder {
+  color: #93939A;
+}
+
+textarea {
+  width: 100%;
+
+  color: #fff;
+  font-size: 18px;
+
+  padding: 10px;
+  background: transparent;
+
+  border: none;
+  outline: none;
+  resize: none;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  /* Enables smooth scrolling on iOS devices */
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  /* Change the scroll bar width */
+  height: 12px;
+  /* Change the scroll bar height */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #1B2836;
+  /* Change the track color */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #28394c;
+  /* Change the thumb color */
+  border-radius: 10px;
+  /* Set border-radius for a rounded thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #40586c;
+  /* Change the thumb color on hover */
+}
+
+button {
+
+  margin-left: 6px;
+
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  background: transparent;
+}
+
+form img {
+  width: 28px;
+  height: 28px;
+}

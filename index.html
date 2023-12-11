@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BigData chatbot</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div id="app">
+
+    <header>
+      <div class="header-content">
+        <label>~ ربات سخنگوی بیگ دیتا</label>
+        <button id="clearButton"><img id="imgInsideClearButton" src="assets/ic_clear.svg" />
+
+      </div>
+    </header>
+
+    <div id="chat_container"></div>
+
+    <form>
+      <textarea wrap="soft" id="mainTextArea" name="prompt" rows="1" cols="1"
+        placeholder="سوال خود را تایپ کنید..."></textarea>
+      <button id="submitButton" type="submit"><img id="imgInButton" src="assets/arrow_up.svg" alt="send" />
+    </form>
+
+
+    <div id="bannerContainer">
+      <img src="assets/help_center.png" alt="Banner Image">
+    </div>
+
+  </div>
+
+  <script type="module" src="script.js"></script>
+</body>
+
+</html>
